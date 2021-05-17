@@ -1,2 +1,2 @@
-# enhanceU9
-Unit 9 GitHub / Trello integrated app
+# Enhance
+GitHub / Trello integrations in a modern ux designed calendar app for managing your projects better
