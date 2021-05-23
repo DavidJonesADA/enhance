@@ -19,6 +19,39 @@
 	}
 </script>
 
+<div class="modal" style="width: 100vw; height: 100vh; position: absolute;">
+	<div style="z-index: 3; position: absolute; width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center;">
+		<div style="text-align: center; width: 100%; margin: 2rem; height: 33%; background-color: #fbfbfb; border-radius: 0.25rem; color: #292929; font-size: 1.25em; ">
+			<div style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Please select your Trello Board</div>
+			<div style="font-size: 0.85em; background-color: #84c6ff; display: inline-block; padding: 0.25rem; border-radius: 25px;">
+				<div>
+					GitHub Repo: next-js
+				</div>
+			</div>
+			<div>
+				<div style="margin-top: 1.25rem; display: flex; justify-content: center; align-items: center;">
+					<img src="../images/chrome_lGoPS9sQw2.png" alt="trelloc">
+					<div style="font-size: 0.95rem; margin-left: 0.5rem;">Next-Js Board</div>
+				</div>
+				<div style="margin-top: 1.25rem; display: flex; justify-content: center; align-items: center;">
+					<img src="../images/chrome_52qINqGVNK.png" alt="trelloc">
+					<div style="font-size: 0.95rem; margin-left: 0.5rem;">LastPass Board</div>
+				</div>
+				<div style="margin-top: 1.25rem; display: flex; justify-content: center; align-items: center;">
+					<img src="../images/chrome_50Qf9Ziy8v.png" alt="trelloc">
+					<div style="font-size: 0.95rem; margin-left: 0.5rem;">Spotify-Fix Board</div>
+				</div>
+				
+				
+			</div>
+		</div>
+	</div>
+
+	<div style="position: absolute; width: 100vw; height: 100vh; background-color: grey; opacity: 65%; z-index: 2; top: -15px;">
+
+	</div>
+</div>
+
 <h1 class="setup_title">Awesome!</h1>
 
 <div style="margin-top: 0.45rem; font-size: 2.5em; font-weight: 300; text-align: center;">Lets get you setup</div>
