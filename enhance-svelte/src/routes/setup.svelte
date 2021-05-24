@@ -17,37 +17,69 @@
 		t2 = ''
 		trelloConnected = true;
 	}
+
+	let selectSrc = ''
+
+	function handleRoute() {
+		window.location.href = '/calendar'
+	}
+
+	function test() {
+		document.getElementById('no1').style.background = 'none'
+		document.getElementById('no2').style.background = 'none'
+		document.getElementById('no3').style.background = 'none'
+		selectSrc = document.getElementById(this.id + 'image').src
+		this.style.background = '#ffa7a7'
+	}
+
+	let currentRep = ''
+
+	let currentText = ''
+
+	function openmodal() {
+		currentRep = this.id + 'image'
+		currentText = document.getElementById(this.id + 'text').innerText
+		document.getElementById('modal').style.display = 'block'
+	}
+
+	function closemodal() {
+		document.getElementById(currentRep).style.width = '15px'
+		document.getElementById(currentRep).style.height = '15px'
+		document.getElementById(currentRep).src = selectSrc || '../images/chrome_50Qf9Ziy8v.png'
+		document.getElementById('modal').style.display = 'none'
+	}
 </script>
 
-<div class="modal" style="width: 100vw; height: 100vh; position: absolute;">
+<div id="modal" style="width: 100vw; height: 100vh; position: absolute; display: none;">
 	<div style="z-index: 3; position: absolute; width: 100%; height: 100vh; display: flex; align-items: center; justify-content: center;">
 		<div style="text-align: center; width: 100%; margin: 2rem; height: 33%; background-color: #fbfbfb; border-radius: 0.25rem; color: #292929; font-size: 1.25em; ">
 			<div style="margin-top: 0.5rem; margin-bottom: 0.5rem;">Please select your Trello Board</div>
 			<div style="font-size: 0.85em; background-color: #84c6ff; display: inline-block; padding: 0.25rem; border-radius: 25px;">
 				<div>
-					GitHub Repo: next-js
+					GitHub Repo: {currentText}
 				</div>
 			</div>
 			<div>
-				<div style="margin-top: 1.25rem; display: flex; justify-content: center; align-items: center;">
-					<img src="../images/chrome_lGoPS9sQw2.png" alt="trelloc">
+				<div id="no1" style="margin-top: 0.75rem; display: flex; justify-content: center; align-items: center; padding: 0.25rem;" on:click={test}>
+					<img id="no1image" src="../images/chrome_lGoPS9sQw2.png" alt="trelloc1">
 					<div style="font-size: 0.95rem; margin-left: 0.5rem;">Next-Js Board</div>
 				</div>
-				<div style="margin-top: 1.25rem; display: flex; justify-content: center; align-items: center;">
-					<img src="../images/chrome_52qINqGVNK.png" alt="trelloc">
+				<div id="no2" style="margin-top: 0.75rem; display: flex; justify-content: center; align-items: center; padding: 0.25rem;" on:click={test}>
+					<img id="no2image" src="../images/chrome_52qINqGVNK.png" alt="trelloc2">
 					<div style="font-size: 0.95rem; margin-left: 0.5rem;">LastPass Board</div>
 				</div>
-				<div style="margin-top: 1.25rem; display: flex; justify-content: center; align-items: center;">
-					<img src="../images/chrome_50Qf9Ziy8v.png" alt="trelloc">
+				<div id="no3" style="margin-top: 0.75rem; display: flex; justify-content: center; align-items: center; padding: 0.25rem;" on:click={test}>
+					<img id="no3image" src="../images/chrome_50Qf9Ziy8v.png" alt="trelloc3">
 					<div style="font-size: 0.95rem; margin-left: 0.5rem;">Spotify-Fix Board</div>
 				</div>
-				
-				
+			</div>
+			<div style="margin-top: 1rem; padding: 0.25rem; display: inline-block; border-radius: 2" on:click={closemodal}>
+				Continue
 			</div>
 		</div>
 	</div>
 
-	<div style="position: absolute; width: 100vw; height: 100vh; background-color: grey; opacity: 65%; z-index: 2; top: -15px;">
+	<div style="position: absolute; width: 100vw; height: 100vh; background-color: #000000; opacity: 25%; z-index: 2; top: -15px;">
 
 	</div>
 </div>
@@ -112,31 +144,70 @@
 		Please select your github repositories
 	</div>
 
-	<div class="rep rep1">
+	<div id="rep1" class="rep rep1" on:click={openmodal}>
 		<img src="../images/gitrep.svg" alt="gitrepo" style="max-height: 3em;">
 		<div style="display: flex; flex-direction: column;">
-			<div style="font-size: 1rem;">DavidJonesADA/</div>
-			<div style="font-size: 0.75rem; margin-top: -0.35rem">spotify-old-version-fix</div>
+			<div style="font-size: 1rem; min-width: 125px; display: flex; align-items: center;">DavidJonesAda/<img id="rep1image" class="repimage" style="margin-left: 0.25rem width: 0px; height: 0px;"  src="../images/chrome_lGoPS9sQw2.png" alt="testimage1"></div>
+			<div id="rep1text" style="font-size: 0.75rem; margin-top: -0.35rem">spotify-old-version-fix</div>
 		</div>
 	</div>
-	<div class="rep rep2">
+	<div id="rep2" class="rep rep2" on:click={openmodal}>
 		<img src="../images/gitrep.svg" alt="gitrepo" style="max-height: 3em;">
 		<div style="display: flex; flex-direction: column;">
-			<div style="font-size: 1rem;">DavidJonesADA/</div>
-			<div style="font-size: 0.75rem; margin-top: -0.35rem">next-js</div>
+			<div style="font-size: 1rem; min-width: 125px; display: flex; align-items: center;">DavidJonesAda/<img id="rep2image" class="repimage"style="margin-left: 0.25rem width: 0px; height: 0px;" src="../images/chrome_lGoPS9sQw2.png" alt="testimage2"></div>
+
+			<div id="rep2text" style="font-size: 0.75rem; margin-top: -0.35rem">next-js</div>
 		</div>
 	</div>
-	<div class="rep rep3">
+	<div id="rep3" class="rep rep3" on:click={openmodal}>
 		<img src="../images/gitrep.svg" alt="gitrepo" style="max-height: 3em;">
 		<div style="display: flex; flex-direction: column;">
-			<div style="font-size: 1rem; min-width: 125px;">lastpass/</div>
-			<div style="font-size: 0.75rem; margin-top: -0.35rem">opennam-auth-node</div>
+			<div style="font-size: 1rem; min-width: 125px; display: flex; align-items: center;">lastpass/<img id="rep3image" class="repimage" style="margin-left: 0.25rem width: 0px; height: 0px;" src="../images/chrome_lGoPS9sQw2.png" alt="testimage3"></div>
+			<div id="rep3text" style="font-size: 0.75rem; margin-top: -0.35rem">opennam-auth-node</div>
 		</div>
 	</div>
 </div>
 
+<div class="authenticate_box" on:click={handleRoute}>
+	<div class="authenticate_text">Continue!</div>
+	<div class="purple_auth_bar"></div>
+	<div class="blue_auth_bar"></div>
+</div>
+
 
 <style>
+
+	.authenticate_box {
+		display: flex;
+		flex-direction: column;
+		width: 100%;
+		justify-content: center;
+		align-items: center;
+		margin-top: 2.2rem;
+		font-size: 1.5rem;
+	}
+
+.purple_auth_bar {
+		width: 45%;
+		height: 5px;
+		display: inline-block;
+		background-color: #b193ff;
+		border-radius: 50px;
+		margin-top: 0.5rem;
+	}
+
+	.blue_auth_bar {
+		width: 25%;
+		height: 5px;
+		display: inline-block;
+		background-color: #6d93ff;
+		border-radius: 50px;
+		margin-top: 0.5rem;
+	}
+
+	.repimage {
+		margin-left: 0.25rem;
+	}
 
 	.rep {
 		display: flex;

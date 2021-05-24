@@ -1,0 +1,86 @@
+<html>
+<head>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<style>
+body {
+  background: lightblue;
+}
+* {
+  font-family: "Ubuntu", serif;
+}
+h1 {
+  font-size: calc(100% + 35px);
+  margin: 0px 10%;
+}
+img {
+  width: 40%;
+  max-width:300px;
+  height: auto;
+  padding: 20px 0px;
+}
+.roundCorner {
+  border-radius: 25px;
+  background: white;
+  padding: 20px auto;
+  width: 90%;
+  height: auto;
+}
+input:not(.hcaptcha) {
+  border: 2px solid black;
+  width: 75%;
+  padding: 12px 20px;
+}
+iframe {
+  border: none;
+}
+
+</style>
+</head>
+
+<body>
+<h1 style='text-align: center;'>Authorise Enhance with Github</h1>
+
+<div style="display:flex;justify-content:center;align-items:center;">
+<img src="github logo.png" style="width: 3rem;">
+</div>
+
+<form>
+<div style="display:flex;justify-content:center;align-items:center">
+<div class="roundCorner">
+<div style="display:flex;justify-content:center;align-items:center;">
+<p style="font-size:6vw;">Username or Email:</p>
+</div>
+<div style="display:flex;justify-content:center;align-items:center;">
+<input type="text">
+</div>
+<div style="display:flex;justify-content:center;align-items:center;">
+<p style="font-size:6vw;">Password:</p>
+</div>
+<div style="display:flex;justify-content:center;align-items:center;">
+<input type="password">
+</div>
+<br>
+<div style="display:flex;justify-content:center;align-items:center;">
+<iframe class="hcaptcha"  src="hcaptcha"></iframe>
+</div>
+</div>
+</div>
+<br>
+<div style="display:flex;justify-content:center;align-items:center">
+<div class="roundCorner">
+<div style="display:flex;justify-content:center;align-items:center" onclick="change()">
+<p  style="font-size:6vw;">Submit</p>
+</div>
+</div>
+</div>
+</div>
+</form>
+</body>
+</html>
+
+<script>
+  function change() {
+    window.location.href = "/setup?auth=github"
+  }
+</script>

@@ -2,7 +2,7 @@
 	import successkid from 'images/successkid.jpg';
 
 	function handleRoute(auth) {
-		window.location.href = 'setup?auth=' + auth
+		window.location.href = '/authgit.html'
 	}
 
 </script>
